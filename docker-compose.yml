@@ -1,0 +1,21 @@
+version: '3'
+services:
+
+  phpipam:
+    build: .
+    # ถ้าไม่ต้องการ Build ให้เปิด comment นี้
+    # image: ghcr.io/ezynook/phpipam/phpipam:1.6
+    container_name: phpipam
+    ports:
+      - 80:80
+      - 3306:3306
+    volumes:
+      - IPAM_DATA:/var/lib/mysql
+    networks:
+      - ipam_network
+      
+volumes:
+  IPAM_DATA:
+networks:
+  ipam_network:
+    driver: bridge
