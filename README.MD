@@ -5,6 +5,11 @@ PhpIPAM ใช้เพื่อจัดทำเอกสาร VLAN และ
 
 <img src="snapshot/main.png" width="800">
 
+# Download Project
+```bash
+$ git clone https://github.com/ezynook/phpipam.git
+$ cd phpipam
+```
 # Config Agent
 ```bash
 $ vim agent/config.php
@@ -30,12 +35,8 @@ $config['db']['pass'] = "root";
 $config['db']['name'] = "phpipam";
 $config['db']['port'] = 3306;
 ```
-
 # Deploy
-
 ```bash
-$ git clone https://github.com/ezynook/phpipam.git
-$ cd phpipam
 $ docker-compose up -d --build
 ```
 # Database Setup
