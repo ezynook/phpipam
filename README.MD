@@ -15,31 +15,6 @@ $ cd phpipam
 ```bash
 $ docker-compose up -d --build
 ```
-# Config Agent
-```bash
-$ vim ~/phpipam/agent/config.php
-```
-> วิธีไปดึงค่า Agent Code
-* Administration
-* phpIPAMsettings
-* Scan agents
-* Create new agent ** Copy code แล้วนำมาใส่
-```php
-$config['key'] = "";
-```
-> ระบุ Path fping (which fping)
-```php
-$config['method'] 	= "fping";
-$config['pingpath'] = "/usr/local/sbin/fping";
-```
-> กำหนดค่า Database
-```php
-$config['db']['host'] = "localhost";
-$config['db']['user'] = "root";
-$config['db']['pass'] = "root";
-$config['db']['name'] = "phpipam";
-$config['db']['port'] = 3306;
-```
 # Database Setup
 * Username: ```root```
 * Password: ```root```

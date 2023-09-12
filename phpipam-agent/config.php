@@ -1,6 +1,6 @@
 <?php
     $config['type'] = "mysql";
-    $config['key'] = "<Agent Here>";
+    $config['key'] = "aM6ouGqESmrhhBoKWmZ0qim5ssCaWxyd";
     $config['method'] 	= "fping";
     $config['pingpath'] = "/usr/bin/fping";
     $config['nonthreaded'] = false;
