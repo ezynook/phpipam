@@ -7,6 +7,7 @@ PhpIPAM ใช้เพื่อจัดทำเอกสาร VLAN และ
 
 # Download Project
 ```bash
+$ cd ~
 $ git clone https://github.com/ezynook/phpipam.git
 $ cd phpipam
 ```
@@ -16,7 +17,7 @@ $ docker-compose up -d --build
 ```
 # Config Agent
 ```bash
-$ vim agent/config.php
+$ vim ~/phpipam/agent/config.php
 ```
 > วิธีไปดึงค่า Agent Code
 * Administration
@@ -56,10 +57,21 @@ docker exec -it phpipam \
 * ```Linux (crontab)```
 * ```Windows (Task Schedule)```
 ```bash
-crontab -e
+touch ~/phpipam/updatecheck.sh && chmod +x ~/phpipam/updatecheck.sh && vim ~/phpipam/updatecheck.sh
+```
+คัดลอง Script นี้ไปวาง
+```bash
+#!/bin/bash
+
+*/5 * * * * docker exec -i phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php update"
 ```
 ```bash
-*/5 * * * * docker exec -i phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php discover"
+crontab -e
+```
+คัดลอง Script นี้ไปวาง
+* สามารถกำหนดช่วงเวลาที่ต้องการให้ Update ในรูปแบบ Cron
+https://crontab.guru/
+```bash
 */5 * * * * docker exec -i phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php update"
 ```
 
