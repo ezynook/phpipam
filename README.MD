@@ -32,13 +32,17 @@ docker exec -it phpipam \
 * ```Linux (crontab)```
 * ```Windows (Task Schedule)```
 ```bash
-touch ~/phpipam/updatecheck.sh && chmod +x ~/phpipam/updatecheck.sh && vim ~/phpipam/updatecheck.sh
+touch \
+      ~/phpipam/updatecheck.sh \
+      && chmod +x ~/phpipam/updatecheck.sh \
+      && vim ~/phpipam/updatecheck.sh
 ```
 คัดลอง Script นี้ไปวาง
 ```bash
 #!/bin/bash
 
-*/5 * * * * docker exec -i phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php update"
+docker exec -i phpipam bash -c \
+"cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php update"
 ```
 ```bash
 crontab -e
@@ -47,7 +51,7 @@ crontab -e
 * สามารถกำหนดช่วงเวลาที่ต้องการให้ Update ในรูปแบบ Cron
 https://crontab.guru/
 ```bash
-*/5 * * * * docker exec -i phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php update"
+*/5 * * * * bash ~/phpipam/updatecheck.sh
 ```
 
 ---
