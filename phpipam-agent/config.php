@@ -2,7 +2,7 @@
     $config['type'] = "mysql";
     $config['key'] = "<Agent Here>";
     $config['method'] 	= "fping";
-    $config['pingpath'] = "/usr/local/sbin/fping";
+    $config['pingpath'] = "/usr/bin/fping";
     $config['nonthreaded'] = false;
     $config['threads']  = 32;
     $config['api']['key'] = "";
@@ -10,7 +10,7 @@
     $config['reset_autodiscover_addresses'] = false;
     $config['remove_inactive_dhcp']         = false;
 
-    $config['db']['host'] = "localhost";
+    $config['db']['host'] = "127.0.0.1";
     $config['db']['user'] = "root";
     $config['db']['pass'] = "root";
     $config['db']['name'] = "phpipam";
