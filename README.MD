@@ -10,6 +10,10 @@ PhpIPAM ใช้เพื่อจัดทำเอกสาร VLAN และ
 $ git clone https://github.com/ezynook/phpipam.git
 $ cd phpipam
 ```
+# Deploy
+```bash
+$ docker-compose up -d --build
+```
 # Config Agent
 ```bash
 $ vim agent/config.php
@@ -35,10 +39,6 @@ $config['db']['pass'] = "root";
 $config['db']['name'] = "phpipam";
 $config['db']['port'] = 3306;
 ```
-# Deploy
-```bash
-$ docker-compose up -d --build
-```
 # Database Setup
 * Username: ```root```
 * Password: ```root```
@@ -59,8 +59,8 @@ docker exec -it phpipam \
 crontab -e
 ```
 ```bash
-*/5 * * * * docker exec -it phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php discover"
-*/5 * * * * docker exec -it phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php update"
+*/5 * * * * docker exec -i phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php discover"
+*/5 * * * * docker exec -i phpipam bash -c "cd /var/www/html/phpipam-agent; /usr/local/bin/php index.php update"
 ```
 
 ---
