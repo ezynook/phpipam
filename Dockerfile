@@ -1,4 +1,4 @@
-FROM ghcr.io/ezynook/phpipam/phpipam:latest
+FROM ghcr.io/ezynook/phpipam/phpipam:1.6
 MAINTAINER Pasit Y.
 
 RUN docker-php-ext-install pcntl
