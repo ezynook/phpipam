@@ -11,11 +11,6 @@ services:
       - 3306:3306
     volumes:
       - IPAM_DATA:/var/lib/mysql
-    networks:
-      - ipam_network
       
 volumes:
   IPAM_DATA:
-networks:
-  ipam_network:
-    driver: bridge
