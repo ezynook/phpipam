@@ -8,7 +8,7 @@ if [[ "$1" == "-h" || "$1" == "" ]]; then
 	echo "Command Parameters"
 	echo "--cron		=		Running Ontime in Crontab"
 	echo "--pm2		=		Running Realtime Logs For PM2"
-	echo "--pm2 <miniute>	=		Running Realtime FLogs For PM2 With Assign Minutes (Number) exp: 5,10,15"
+	echo "--pm2 <second>	=		Running Realtime FLogs For PM2 With Assign Minutes (Number) exp: 200 = 5m, 600 = 10m"
 	exit 0
 fi
 
